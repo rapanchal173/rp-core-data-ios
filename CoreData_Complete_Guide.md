@@ -134,6 +134,12 @@ erDiagram
 ### Attribute types available
 `String`, `Integer 16/32/64`, `Decimal`, `Double`, `Float`, `Boolean`, `Date`, `Binary Data`, `UUID`, `URI`, `Transformable` (for custom Codable objects).
 
+4 types of attributes:
+Optional - can contain nil value.
+Transient - A property defined in model but should not be persisted. example: Undo/Redo management related property.
+Derived - A property derived from other properties/attributes and persisted in store to prevent recalculation every time.
+Transformable - To store non-standard data types (like a custom Swift struct, UIColor, or UIImage) in Core Data. Property serializes into binary data before saving and deserializes when retrieved. 
+
 ### Defining a relationship in code (after modeling in the editor)
 
 ```swift
